@@ -187,4 +187,7 @@ if __name__ == '__main__':
     print("Open your browser and visit the URL above")
     print("="*50 + "\n")
     
+
     app.run(debug=True, port=5000)
+    import os
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
