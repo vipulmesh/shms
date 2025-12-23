@@ -173,21 +173,15 @@ def get_data():
         return jsonify([]), 500
 
 # ===========================
-# RUN APPLICATION
 # ===========================
-if __name__ == '__main__':
-    # Initialize database on startup
-    init_database()
-    
-    # Run Flask app
-    print("\n" + "="*50)
-    print("🏥 Smart Health Monitoring System")
-    print("="*50)
-    print("Server running on: http://localhost:5000")
-    print("Open your browser and visit the URL above")
-    print("="*50 + "\n")
-    
-
-    app.run(debug=True, port=5000)
+# RUN APPLICATION (RAILWAY SAFE)
+# ===========================
+if __name__ == "__main__":
     import os
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
+    init_database()
+
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
